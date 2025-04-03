@@ -1,0 +1,16 @@
+[build]
+builder = "dockerfile"
+
+[deploy]
+startCommand = "./mta-server64 -n"
+healthcheckPath = "/health"
+healthcheckTimeout = 300
+restartPolicyType = "never"
+
+[[ports]]
+port = 22003
+protocol = "udp"
+
+[[ports]]
+port = 22126
+protocol = "tcp"
