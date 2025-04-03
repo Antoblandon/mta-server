@@ -22,6 +22,9 @@ RUN wget https://linux.multitheftauto.com/dl/multitheftauto_linux_x64.tar.gz && 
 # Copiamos el archivo de configuración mtaserver.conf al contenedor
 COPY mtaserver.conf /mta/multitheftauto_linux_x64/
 
+# Comprobamos si el archivo se copió correctamente
+RUN ls -l /mta/multitheftauto_linux_x64/
+
 # Cambiamos al directorio donde se encuentra el servidor MTA
 WORKDIR /mta/multitheftauto_linux_x64
 
